@@ -6,6 +6,8 @@
 # include "struct.h"
 # include "libft.h"
 
-int	ft_printf(const char *, ...);
+# include "struct.h"
+
+int	ft_printf(const char *format, ...);
 
 #endif //PRINTF_PRINFT_H
