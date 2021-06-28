@@ -1,6 +1,8 @@
-#include <stdio.h>
+#include "includes/ft_printf.h"
 
-int main() {
-	printf("Hello, World!\n");
+int main()
+{
+	int a = 5;
+	printf("%dd", a);
 	return 0;
 }

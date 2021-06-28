@@ -3,11 +3,12 @@
 
 typedef struct s_procent
 {
+	char		status; //e-> error, o-> ok
 	char		flag;
 	char		width;
 	char		precision;
 	char		type;
-	int			len;
+	int 		start;
 }				t_procent;
 
 #endif //PRINTF_STRUCT_H
