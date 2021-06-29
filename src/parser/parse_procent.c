@@ -15,7 +15,7 @@ void	parse_procent(char *format, t_procent *pr,int *counter, va_list list)
 		if (format[i] == '0' ||  format[i] == '-')
 			pr->flag = format[i];
 		if (ft_isdigit(format[i]))
-			add_values(&pr->width);//add numbers to width (string with strcat(firsts, second)
+			add_values(&pr->width, counter, format);//add numbers to width (string with strcat(firsts, second)
 			//TODO create add_values
 		if (format[i] == '.')
 			add_values(&pr->precision);
