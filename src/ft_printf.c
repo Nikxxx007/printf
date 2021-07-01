@@ -14,7 +14,7 @@ int ft_printf(const char *format, ...)
 		if(format[i] == '%')
 		{
 			stru_values(&pr);
-			parse_procent(); //TODO add prototype
+			parse_procent(); //TODO add params
 		}
 		else
 			write(1, &(format[i++]), 1);

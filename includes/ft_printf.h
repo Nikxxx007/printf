@@ -8,10 +8,10 @@
 
 # include "libft.h"
 # include "struct.h"
+# include "parser.h"
 
 int	ft_printf(const char *format, ...);
 
 t_procent 	*stru_values(t_procent *values);
-void		parse_procent(char *format, t_procent *pr,int *counter, va_list list);
 
 #endif //PRINTF_FT_PRINTF_H
