@@ -1,20 +1,20 @@
 #include "../../includes/ft_printf.h"
 
-int	ft_atoi_int(const char *str)
+int		ft_atoi_int(const char *str, int *i)
 {
     unsigned int	new;
     int				minus;
 
     new = 0;
     minus = 1;
-    if (*str == '-')
+    if (str[*i] == '-')
         minus *= -1;
-    if ((*str == '-') || (*str == '+'))
-        str++;
-    while (*str >= '0' && *str <= '9')
+    if ((str[*i] == '-') || (str[*i] == '+'))
+		(*i)++;
+    while (str[*i] >= '0' && str[*i] <= '9')
     {
-        new = (new * 10) + (*str - '0');
-        str++;
+        new = (new * 10) + (str[*i] - '0');
+		(*i)++;
         if ((new > 2147483647 && minus == 1)
             || (new > 2147483648 && minus == -1))
         {
@@ -26,7 +26,14 @@ int	ft_atoi_int(const char *str)
     return ((int)(new * minus));
 }
 
-int		add_values(char *format, int *counter)
+void	add_values(int *value,int *i, char *format, va_list *list)
 {
-
+    if (ft_isdigit(format[*i]) || format[*i] == '*') {
+		if (format[*i] == '*')
+			value = va_arg(list, int);
+		else
+			value = ft_atoi_int(format, &i);
+	}
+    else
+    	pr->status = 'e';
 }

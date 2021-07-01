@@ -12,6 +12,6 @@
 
 int	ft_printf(const char *format, ...);
 
-t_procent 	*stru_values(t_procent *values);
+void	stru_values(t_procent *values);
 
 #endif //PRINTF_FT_PRINTF_H

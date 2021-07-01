@@ -3,6 +3,6 @@
 int main()
 {
 	int a = 5;
-	printf("%dd", a);
+	printf("%010daa", a);
 	return 0;
 }
