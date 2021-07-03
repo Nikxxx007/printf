@@ -5,6 +5,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# include "printf.h"
+
 void	*ft_memset(void *destination, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t num, size_t size);
@@ -26,7 +28,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
 int		ft_isalpha(int ch);
-int		ft_isdigit(int ch);
+int     ft_isdigit(int ch);
 int		ft_isalnum(int c);
 int		ft_isascii(int ch);
 int		ft_isprint(int ch);

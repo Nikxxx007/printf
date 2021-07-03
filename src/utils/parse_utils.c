@@ -26,14 +26,17 @@ int		ft_atoi_int(const char *str, int *i)
     return ((int)(new * minus));
 }
 
-void	add_values(int *value,int *i, char *format, va_list *list)
+void	add_values(int *value, int *i, const char *format, va_list list)
 {
-    if (ft_isdigit(format[*i]) || format[*i] == '*') {
+    if (format[*i] == '.')
+        (*i)++;
+    if ((format[*i] >= '0' && format[*i] <= '9') || format[*i] == '*') //TODO change for isDigit2
+    {
 		if (format[*i] == '*')
-			value = va_arg(list, int);
+			*value = va_arg(list, int);
 		else
-			value = ft_atoi_int(format, &i);
+			*value = ft_atoi_int(format, i);
 	}
-    else
-    	pr->status = 'e';
+//    else
+//    	pr->status = 'e';
 }

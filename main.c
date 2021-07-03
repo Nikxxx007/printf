@@ -3,6 +3,6 @@
 int main()
 {
 	int a = 5;
-	printf("%010daa", a);
+    ft_printf("%012.567d", a);
 	return 0;
 }

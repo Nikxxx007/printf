@@ -9,12 +9,12 @@ int ft_printf(const char *format, ...)
 
 	i = 0;
 	va_start(list, format);
-	while (format[i])
+	while (format[i]) // i < strlen(format)
 	{
-		if(format[i] == '%')
+		if(format[i++] == '%')
 		{
 			stru_values(&pr);
-			parse_procent((format + i), &pr, &i, list); //TODO add params  parse_procent(char *format, t_procent *pr,int *counter, va_list list)
+			parse_procent(format, &pr, &i, list); //TODO add params  parse_procent(char *format, t_procent *pr,int *counter, va_list list)
 		}
 		else
 			write(1, &(format[i++]), 1);

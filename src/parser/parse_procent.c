@@ -28,16 +28,17 @@ void	parse_procent(const char *format, t_procent *pr, int *counter, va_list list
 	while (isValide(format[i]))
 	{
 		if (format[i] == '0' ||  format[i] == '-')
-			pr->flag = format[i];
-		else if (ft_isdigit(format[i]) || format[i] == '*')
-			add_values(&pr->width, &i, format, list); //TODO create add_values
-		else if (format[i++] == '.')
+			pr->flag = format[i++];
+		if ((format[i] >= '0' && format[i] <= '9') || format[i] == '*') //TODO change for isDigit
+			add_values(&pr->width, &i, format, list);
+		if (format[i] == '.')
 			add_values(&pr->precision, &i, format, list);
 //        if (pr->status == 'e')
 //            return counter;
 		i++;
 	}
-    pr->type = format[i];
+    *counter = i;
+    pr->type = format[*counter - 1];
 	//check_stru_type();
 }
 
