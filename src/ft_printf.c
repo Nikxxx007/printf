@@ -14,7 +14,8 @@ int ft_printf(const char *format, ...)
 		if(format[i++] == '%')
 		{
 			stru_values(&pr);
-			parse_procent(format, &pr, &i, list); //TODO add params  parse_procent(char *format, t_procent *pr,int *counter, va_list list)
+			parse_procent(format, &pr, &i, list);
+			apply_procent();
 		}
 		else
 			write(1, &(format[i++]), 1);
