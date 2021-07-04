@@ -10,8 +10,7 @@ typedef struct s_procent
 	char		type;
 	int 		start;//change this value changes till value is correct
 						//maybe should be removed
-	int         cur_elem; //current element of the list (values insted of *)
-	                        //maybe should be removed
+	int         len;
 
 }				t_procent;
 

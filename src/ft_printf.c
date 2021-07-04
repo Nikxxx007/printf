@@ -15,12 +15,12 @@ int ft_printf(const char *format, ...)
 		{
 			stru_values(&pr);
 			parse_procent(format, &pr, &i, list);
-			apply_procent();
+			//apply_procent();
 		}
 		else
-			write(1, &(format[i++]), 1);
+			pr.len += write(0, &(format[i++]), 1);
 	}
 
 	va_end(list);
-	return (i);
+	return (pr.len);
 }

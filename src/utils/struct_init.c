@@ -8,5 +8,5 @@ void	stru_values(t_procent *values)
 	values->precision = -100;
 	values->type = 'n';
 	values->start = -1;
-	values->cur_elem = 1; //first
+	values->len = -100; //first
 }
