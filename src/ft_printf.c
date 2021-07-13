@@ -9,18 +9,19 @@ int ft_printf(const char *format, ...)
 
 	i = 0;
 	va_start(list, format);
-	while (format[i]) // i < strlen(format)
+	while (i < ft_strlen(format))
 	{
-		if(format[i++] == '%')
+		if(format[i] == '%')
 		{
+		    i++;
 			stru_values(&pr);
-			parse_procent(format, &pr, &i, list);
-			//apply_procent();
+			parse_procent(format, &pr, &i, list);//TODO fix %type%typre (no space)
+            apply_procent(format, &pr, &i, list);
 		}
 		else
-			pr.len += write(0, &(format[i++]), 1);
+			pr.len += write(1, &(format[i++]), 1);
 	}
 
 	va_end(list);
-	return (pr.len);
+	return (pr.len); //TODO check if returned number is correct
 }

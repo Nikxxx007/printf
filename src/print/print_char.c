@@ -15,8 +15,9 @@ void	print_minus(t_procent *pr, char value)
 
 void	print_zero_space(t_procent *pr, char value)
 {
-	if (pr->flag == '0' && pr->width > 1)
-		;//TODO finished here (continue doing func in apply procent)
+//	if (pr->flag == '0' && pr->width > 1)
+//		;//TODO finished here (continue doing func in apply procent)
+    write(1, &value, 1);
 }
 
 void	print_char(t_procent *pr, va_list list)

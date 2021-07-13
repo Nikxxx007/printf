@@ -9,6 +9,7 @@
 # include "libft.h"
 # include "struct.h"
 # include "parser.h"
+# include "utils.h"
 
 int	ft_printf(const char *format, ...);
 

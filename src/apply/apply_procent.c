@@ -3,19 +3,17 @@
 void	apply_procent(const char *format, t_procent *pr, int *counter, va_list list)
 {
 	if (pr->type == 'c')
-		print_char();
+        print_char(pr, list);
 	else if (pr->type == 's')
-		print_string();
-	else if (pr->type == 'c')
-		print_char();
+		print_string(pr, list);
 	else if (pr->type == 'p')
-		print_void();
+		print_pointer(pr, list);
 	else if (pr->type == 'i' || pr->type == 'd')
-		print_decimal();
+		print_int(pr, list);
 	else if (pr->type == 'u')
-		print_decimal();
+		print_unsigned(pr, list);
 	else if (pr->type == 'x' || pr->type == 'X')
-		print_hex();
+		print_hex(pr, list);
 	else if (pr->type == '%')
-		print_();
+		write(1, "%", 1);
 }

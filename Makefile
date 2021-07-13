@@ -1,19 +1,24 @@
 CC		= gcc
 NAME	= libftprintf.a
-SRCS	=
+SRCS	= src/apply/apply_procent.c \
+          src/parser/parse_procent.c \
+          src/print/print_char.c \
+          src/utils/parse_utils.c \
+          src/utils/struct_init.c \
+          src/ft_printf.c
 
 
 OBJS		= $(SRCS:.c=.o)
 
 
-FLAGS	= -Wall -Werror -Wextra
+FLAGS	= -Wall -Wextra #add -Werror
 LIBC	= ar rc
 LIBR	= ranlib
 RM		= rm -f
 INCL	= ./
 
 .c.o:
-	$(CC) $(FLAGS) -I$(INCL) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $(<:.c=.o)
 
 $(NAME): 	$(OBJS)
 	make bonus -C libft
