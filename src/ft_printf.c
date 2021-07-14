@@ -3,11 +3,13 @@
 
 int ft_printf(const char *format, ...)
 {
-	va_list		list;
+	va_list		list; //DOTO fix returned number (pr->len += write(...), len += pr->len)
 	t_procent	pr;
-	int			i;
+	size_t 		i;
+	int         ret;
 
 	i = 0;
+	ret = 0;
 	va_start(list, format);
 	while (i < ft_strlen(format))
 	{
@@ -15,13 +17,14 @@ int ft_printf(const char *format, ...)
 		{
 		    i++;
 			stru_values(&pr);
-			parse_procent(format, &pr, &i, list);//TODO fix %type%typre (no space)
-            apply_procent(format, &pr, &i, list);
+			parse_procent(format, &pr, &i, list);
+            apply_procent(&pr, list);
+            ret += pr.len;
 		}
 		else
-			pr.len += write(1, &(format[i++]), 1);
+			ret += write(1, &(format[i++]), 1);
 	}
 
 	va_end(list);
-	return (pr.len); //TODO check if returned number is correct
+	return (ret); //TODO check if returned number is correct
 }

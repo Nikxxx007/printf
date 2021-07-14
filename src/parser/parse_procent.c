@@ -3,14 +3,14 @@
 int 	isValide(char a)
 {
 	if 	((a == 'c') || (a == 's') || (a == 'p') || (a == 'd') || (a == 'i') || (a == 'u') || (a == 'x')||
-			(a == 'X') || (a == '%') || (a == '-') || (a == '.') || (a == '*') ||
-					((a >= '0') && (a <= '9')) && (a == '%')) // TODO if smth does wrong, it's here
+			(a == 'X') || (a == '%') || (a == '-') || (a == '.') || (a == '*') || (a == '%') ||
+					((a >= '0') && (a <= '9')) ) // TODO if smth does wrong, it's here
 		return (1);
 	else
 		return (0);
 }
 
-void	parse_procent(const char *format, t_procent *pr, int *counter, va_list list)
+void	parse_procent(const char *format, t_procent *pr, size_t *counter, va_list list)
 {
 	int i;
 

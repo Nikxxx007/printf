@@ -22,19 +22,19 @@ void	helper_h(long long nb, int fd, t_procent *pr)
             else
                 digit += 55;
         }
-        write(fd, &digit, 1);
+        pr->len += write(fd, &digit, 1);
     }
 }
 
 void	ft_puthex_fd(long long n, int fd, t_procent *pr)
 {
     if (n == 0)
-        write(fd, "0", 1);
+        pr->len += write(fd, "0", 1);
     else
     {
         if (n < 0)
         {
-            write(fd, "-", 1);
+            pr->len += write(fd, "-", 1);
             n *= -1;
         }
         helper_h(n, fd, pr);

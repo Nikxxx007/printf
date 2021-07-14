@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void ft_putstr_fd(char *s, int fd, t_procent *pr)
 {
 	int		i;
 	char	temp;
@@ -11,7 +11,7 @@ void	ft_putstr_fd(char *s, int fd)
 	while (s[i])
 	{
 		temp = s[i];
-		write(fd, &temp, 1);
+		pr->len += write(fd, &temp, 1);
 		i++;
 	}
 }

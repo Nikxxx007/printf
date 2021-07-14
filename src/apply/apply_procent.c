@@ -1,6 +1,6 @@
 #include "../../includes/ft_printf.h"
 
-void	apply_procent(const char *format, t_procent *pr, int *counter, va_list list)
+void apply_procent(t_procent *pr, va_list list)
 {
 	if (pr->type == 'c')
         print_char(pr, list);
