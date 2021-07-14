@@ -15,5 +15,5 @@ void apply_procent(t_procent *pr, va_list list)
 	else if (pr->type == 'x' || pr->type == 'X')
 		print_hex(pr, list);
 	else if (pr->type == '%')
-		write(1, "%", 1);
+		pr->len += write(1, "%", 1);
 }
