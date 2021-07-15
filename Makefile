@@ -15,7 +15,7 @@ SRCS	= src/ft_printf.c \
 
 OBJS		= $(SRCS:.c=.o)
 
-FLAGS	= -Wall -Wextra -Werror # -fsanitize=address
+FLAGS	= -Wall -Wextra -Werror
 LIBC	= ar rc
 LIBR	= ranlib
 RM		= rm -f

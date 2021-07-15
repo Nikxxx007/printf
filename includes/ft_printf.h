@@ -1,5 +1,5 @@
-#ifndef PRINTF_FT_PRINTF_H
-#define PRINTF_FT_PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <stdio.h>
@@ -11,8 +11,7 @@
 # include "parser.h"
 # include "utils.h"
 
-int	ft_printf(const char *format, ...);
-
+int		ft_printf(const char *format, ...);
 void	stru_values(t_procent *values);
 
 #endif //PRINTF_FT_PRINTF_H

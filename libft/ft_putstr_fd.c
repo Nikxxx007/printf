@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd, t_procent *pr)
+void	ft_putstr_fd(char *s, int fd, t_procent *pr)
 {
 	int		i;
 	char	temp;

@@ -2,10 +2,8 @@
 
 void	print_string(t_procent *pr, va_list list)
 {
-    char	*value;
+	char	*value;
 
-    value = va_arg(list, char *);
-    ft_putstr_fd(value, 1, pr);
+	value = va_arg(list, char *);
+	ft_putstr_fd(value, 1, pr);
 }
-
-

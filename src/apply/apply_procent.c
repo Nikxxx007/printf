@@ -1,9 +1,9 @@
 #include "../../includes/ft_printf.h"
 
-void apply_procent(t_procent *pr, va_list list)
+void	apply_procent(t_procent *pr, va_list list)
 {
 	if (pr->type == 'c')
-        print_char(pr, list);
+		print_char(pr, list);
 	else if (pr->type == 's')
 		print_string(pr, list);
 	else if (pr->type == 'p')

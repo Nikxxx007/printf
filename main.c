@@ -2,12 +2,14 @@
 
 int main()
 {
-	char a = '5';
-	char *str = "lol kek cheburek";
+    char a = '1';
+	char *str = NULL;
     unsigned int u_i = 4294967295;
-    int i = 998887711;
-    int k = 4096;
-    ft_printf("%c %s %i %d %u %% %x %X %p %%%%\n", a, str, i, i, u_i, k, k, &str);
-    printf("%p\n", &str);
+    int i = -2147483648;
+    int k = 15;
+//    int len = ft_printf("%c %s %p %d %i %u %x %X %%\n", a, str, &str, i, i, u_i, k, k);
+    int len = ft_printf("%s %c\n", str, a);
+    len = printf("%s\n", str);
+    printf("%d\n", len); // if str == NULL
 	return 0;
 }
