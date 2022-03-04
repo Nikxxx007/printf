@@ -2,4 +2,4 @@
 
 Remake of stdio.h function printf using C
 
-Description of the task you can find in printf.pdf
+Description of the task you can find [here] (printf.pdf)
